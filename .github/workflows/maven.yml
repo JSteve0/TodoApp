@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      env:
+        MONGODB_PASSWORD: ${{ secrets.MONGODBPASSWORD }}
     - name: Set up JDK 16
       uses: actions/setup-java@v3
       with:
@@ -23,4 +25,5 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -DargLine="-Dspring.data.mongodb.uri=mongodb+srv://Admin:${{ MONGODB_PASSWORD }}@todoapp.uqugdnu.mongodb.net/TodoApp" -B package --file pom.xml
+
