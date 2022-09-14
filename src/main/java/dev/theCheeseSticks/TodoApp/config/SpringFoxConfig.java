@@ -15,10 +15,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SpringFoxConfig {
 
     private ApiInfo apiInfo() {
-        String contactEmail = "jmms5757@gmail.com";
-        String contactName = "Justin Stevens";
-        String description = "movie-rankings-api";
-        String title = "movie-rankings";
+        //String contactEmail = "jmms5757@gmail.com";
+        String contactName = "The Cheese Sticks";
+        String description = "todo-app-api";
+        String title = "todo-app";
         String version = "1.0.0";
         return new ApiInfoBuilder()
                 .title(title)
