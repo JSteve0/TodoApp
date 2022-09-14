@@ -10,15 +10,17 @@ public class Todo {
     private String category;
     private Date addedDate;
     private Date completedDate;
+    private Boolean isImportant;
     private Date dueDate;
     private Boolean completedStatus;
 
-    public Todo(String title, String description, String category, Date addedDate, Date completedDate, Date dueDate, Boolean completedStatus) {
+    public Todo(String title, String description, String category, Date addedDate, Date completedDate, Boolean isImportant, Date dueDate, Boolean completedStatus) {
         this.title = title;
         this.description = description;
         this.category = category;
         this.addedDate = addedDate;
         this.completedDate = completedDate;
+        this.isImportant = isImportant;
         this.dueDate = dueDate;
         this.completedStatus = completedStatus;
     }
@@ -31,6 +33,7 @@ public class Todo {
         this.completedDate = null;
         this.dueDate = null;
         this.completedStatus = null;
+        this.isImportant = null;
     }
 
     @Override
@@ -41,6 +44,7 @@ public class Todo {
                 ", category='" + category + '\'' +
                 ", addedDate=" + addedDate +
                 ", completedDate=" + completedDate +
+                ", isImportant=" + isImportant +
                 ", dueDate=" + dueDate +
                 ", completedStatus=" + completedStatus +
                 '}';
