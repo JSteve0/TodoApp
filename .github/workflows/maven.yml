@@ -23,7 +23,7 @@ jobs:
       with:
         java-version: '16'
         distribution: 'temurin'
-        cache: maven
+        cache: maven 
     - name: Build with Maven
       run: mvn -DargLine="-Dspring.data.mongodb.uri=mongodb+srv://Admin:${{ MONGODB_PASSWORD }}@todoapp.uqugdnu.mongodb.net/TodoApp" -B package --file pom.xml
 
