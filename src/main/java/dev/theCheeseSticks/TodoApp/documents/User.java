@@ -13,13 +13,16 @@ public class User {
     private String id;
     private String username;
     private String email;
+
+    private String phone;
     private String password;
     private List<Todo> todos;
 
-    public User(String id, String username, String email, String password, List<Todo> todos) {
+    public User(String id, String username, String email, String phone, String password, List<Todo> todos) {
         this.id = id;
         this.username = username;
         this.email = email;
+        this.phone = phone;
         this.password = password;
         this.todos = todos;
     }
@@ -38,6 +41,7 @@ public class User {
                 "id='" + id + '\'' +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
                 ", password='" + password + '\'' +
                 ", todos=" + todos +
                 '}';
@@ -81,5 +85,13 @@ public class User {
 
     public void setTodos(List<Todo> todos) {
         this.todos = todos;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

@@ -31,11 +31,11 @@ public class TodoAppApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		//For testing
-		userRepository.save(new User(null, "jsteve", "j@gmail.com", "123", null));
+		userRepository.save(new User(null, "jsteve", "j@gmail.com", "phone" ,"123", null));
 
-		User u1 = new User(null, "kaldfj", "jklajdf", "abc", null);
+		User u1 = new User(null, "kaldfj", "jklajdf", "phone","abc", null);
 		List<Todo> test = new ArrayList<Todo>();
-		test.add(new Todo("title", "description", "", new Date(), new Date(), new Date(), false));
+		test.add(new Todo("title", "description", "", new Date(), new Date(), true, new Date(), false));
 		u1.setTodos(test);
 		userRepository.save(u1);
 
@@ -45,4 +45,5 @@ public class TodoAppApplication implements CommandLineRunner {
 
 		userRepository.deleteAll();
 	}
+
 }
