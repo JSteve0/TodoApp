@@ -25,5 +25,5 @@ jobs:
     - name: Build with Maven
       env:
         MONGODB_PASSWORD: ${{ secrets.MONGODBPASSWORD }}
-      run: mvn -DargLine="-Dspring.data.mongodb.uri=mongodb+srv://Admin:${{MONGODB_PASSWORD}}@todoapp.uqugdnu.mongodb.net/TodoApp" -B package --file pom.xml
+      run: mvn -DargLine="-Dspring.data.mongodb.uri=mongodb+srv://Admin:$MONGODB_PASSWORD@todoapp.uqugdnu.mongodb.net/TodoApp" -B package --file pom.xml
 
