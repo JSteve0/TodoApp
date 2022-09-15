@@ -14,36 +14,8 @@ import java.util.List;
 
 @SpringBootApplication
 @EnableMongoRepositories
-public class TodoAppApplication implements CommandLineRunner {
-
-	//For Testing
-	private final UserRepository userRepository;
-
-	//For Testing
-	public TodoAppApplication(UserRepository userRepository) {
-		this.userRepository = userRepository;
-	}
-
+public class TodoAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TodoAppApplication.class, args);
 	}
-
-	@Override
-	public void run(String... args) throws Exception {
-		//For testing
-		userRepository.save(new User(null, "jsteve", "j@gmail.com", "phone" ,"123", null));
-
-		User u1 = new User(null, "kaldfj", "jklajdf", "phone","abc", null);
-		List<Todo> test = new ArrayList<Todo>();
-		test.add(new Todo("title", "description", "", new Date(), new Date(), true, new Date(), false));
-		u1.setTodos(test);
-		userRepository.save(u1);
-
-		System.out.println("size: " + userRepository.findAll().size());
-
-		userRepository.findAll().forEach(System.out::println);
-
-		userRepository.deleteAll();
-	}
-
 }
